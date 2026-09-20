@@ -1,0 +1,37 @@
+#include <iostream>
+using namespace std;
+
+class Discount
+{
+public:
+    // Discount with 2 parameters
+    float discount(float price, float rate)
+    {
+        return price * rate / 100;
+    }
+
+    // Discount with 3 parameters
+    float discount(float price, float rate, float extra)
+    {
+        return price * (rate + extra) / 100;
+    }
+};
+
+int main()
+{
+    Discount d;
+    float price, rate, extra;
+
+    cout << "Enter price and discount rate: ";
+    cin >> price >> rate;
+
+    cout << "Discount = " << d.discount(price, rate) << endl;
+
+    cout << "Enter extra discount: ";
+    cin >> extra;
+
+    cout << "Discount with extra rate = "
+         << d.discount(price, rate, extra);
+
+    return 0;
+}
