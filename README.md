@@ -53,11 +53,12 @@
 
 
 
-## Output
 
-```text
-Constructor called
-Enter student's name: Atharva
-Student's name: Atharva
-Destructor called
-```
+
+
+
+
+
+
+
+<img width="418" height="241" alt="image" src="https://github.com/user-attachments/assets/9702a5e1-27d9-4b68-8812-5eb6e170d9e7" />
