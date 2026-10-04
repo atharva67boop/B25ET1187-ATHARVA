@@ -53,5 +53,11 @@
 
 
 
-<!-- Add another image/file here -->
-<img width="420" height="280" alt="added file" src="https://github.com/user-attachments/assets/PASTE_YOUR_IMAGE_FILE_ID_HERE" />
+## Output
+
+```text
+Constructor called
+Enter student's name: Atharva
+Student's name: Atharva
+Destructor called
+```
