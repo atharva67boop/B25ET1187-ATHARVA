@@ -1,0 +1,34 @@
+#include <iostream>
+using namespace std;
+
+class Complex
+{
+    float real, imag;
+
+public:
+    friend istream& operator>>(istream& in, Complex& c)
+    {
+        cout << "Enter real part: ";
+        in >> c.real;
+
+        cout << "Enter imaginary part: ";
+        in >> c.imag;
+
+        return in;
+    }
+
+    void display()
+    {
+        cout << "Complex number = " << real << " + " << imag << "i";
+    }
+};
+
+int main()
+{
+    Complex c;
+
+    cin >> c;
+    c.display();
+
+    return 0;
+}
