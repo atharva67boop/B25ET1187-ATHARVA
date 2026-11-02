@@ -1,0 +1,28 @@
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int hours;
+
+    cout << "Enter employee working hours: ";
+    cin >> hours;
+
+    try
+    {
+        if (hours < 0 || hours > 24)
+        {
+            throw hours;
+        }
+
+        cout << "Valid working hours: " << hours << endl;
+    }
+    catch (int x)
+    {
+        cout << "Exception: Invalid working hours!" << endl;
+        cout << "Entered hours: " << x << endl;
+    }
+
+    return 0;
+}
