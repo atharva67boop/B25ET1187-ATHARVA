@@ -1,0 +1,59 @@
+
+#include <iostream>
+using namespace std;
+
+// Base class
+class Course
+{
+public:
+    virtual void calculateMarks()
+    {
+        cout << "Calculating Course Marks" << endl;
+    }
+};
+
+// Derived class 1
+class TheoryCourse : public Course
+{
+    int marks;
+
+public:
+    void calculateMarks()
+    {
+        cout << "Enter Theory Marks: ";
+        cin >> marks;
+
+        cout << "Theory Course Marks: " << marks << endl;
+    }
+};
+
+// Derived class 2
+class PracticalCourse : public Course
+{
+    int marks;
+
+public:
+    void calculateMarks()
+    {
+        cout << "Enter Practical Marks: ";
+        cin >> marks;
+
+        cout << "Practical Course Marks: " << marks << endl;
+    }
+};
+
+int main()
+{
+    Course *ptr;
+
+    TheoryCourse t;
+    PracticalCourse p;
+
+    ptr = &t;
+    ptr->calculateMarks();
+
+    ptr = &p;
+    ptr->calculateMarks();
+
+    return 0;
+}
