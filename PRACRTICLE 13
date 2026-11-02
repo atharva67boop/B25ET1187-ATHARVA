@@ -1,0 +1,53 @@
+
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+int main()
+{
+    char source[50], destination[50];
+
+    // Create source file
+    ofstream createSource("source.txt");
+
+    if (createSource)
+    {
+        createSource << "Hello, this is test content inside the source file!\n";
+        createSource.close();
+    }
+
+    // Get file names
+    cout << "Enter source file name: ";
+    cin >> source;
+
+    cout << "Enter destination file name: ";
+    cin >> destination;
+
+    // Open source file
+    ifstream fin(source);
+
+    if (!fin)
+    {
+        cout << "Source file not found.";
+        return 1;
+    }
+
+    // Open destination file
+    ofstream fout(destination);
+
+    if (!fout)
+    {
+        cout << "Error opening destination file.";
+        return 1;
+    }
+
+    // Copy file contents
+    fout << fin.rdbuf();
+
+    fin.close();
+    fout.close();
+
+    cout << "File copied successfully!" << endl;
+
+    return 0;
+}
